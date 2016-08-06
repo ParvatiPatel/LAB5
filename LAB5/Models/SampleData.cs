@@ -6,10 +6,24 @@ using System.Data.Entity;
 
 namespace LAB5.Models
 {
-    public class SampleData : DropCreateDatabaseAlways<MusicStoreContext>
+    public class SampleData : DropCreateDatabaseIfModelChanges<MusicStoreContext>
     {
         protected override void Seed(MusicStoreContext context)
         {
+            var songs = new List<Song>
+            {
+                new Song { Name = "Cheap Thrills" , Duration="5:50"},
+                new Song { Name = "Cold Water" , Duration="6:50"},
+                new Song { Name = "One Dance" , Duration="5:40"},
+                new Song { Name = "This Is What You Came For" , Duration="4:50"},
+                new Song { Name = "Can't Stop The Feeling!" , Duration="4:55"},
+                new Song { Name = "Don't Let Me Down" , Duration="3:55"},
+                new Song { Name = "Ride" , Duration="5:50"},
+                new Song { Name = "Needed Me" , Duration="5:10"},
+                new Song { Name = "Send My Love" , Duration="5:20"},
+                new Song { Name = "Rock" , Duration="5:30"},
+            };
+
             var genres = new List<Genre>
             {
                 new Genre { Name = "Rock" },

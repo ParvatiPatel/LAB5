@@ -21,6 +21,12 @@ namespace LAB5.Controllers
 
             return View(genres);
         }
+        // GET: Songs
+        public ActionResult Song()
+        {
+            List<Song> songs = storeDB.Songs.ToList();
+            return View(songs);
+        }
         //
         // GET: /Store/Browse?genre=Disco
 
